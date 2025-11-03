@@ -81,7 +81,7 @@ const RoleRevealScreen = () => {
         />
       </div>
 
-      {/* Carta de rol */}
+      {/* Carta de rol - MEJORADA CON FONDO MÁS OSCURO */}
       <div className="mb-8 perspective-1000">
         <div 
           className={`
@@ -97,19 +97,25 @@ const RoleRevealScreen = () => {
           {/* Parte delantera */}
           <div 
             className="absolute inset-0 glass-card flex flex-col items-center justify-center"
-            style={{ backfaceVisibility: 'hidden' }}
+            style={{ 
+              backfaceVisibility: 'hidden',
+              backgroundColor: 'rgba(28, 28, 30, 0.95)' // Fondo más sólido
+            }}
           >
             <div className="text-6xl mb-4">🎴</div>
             <h2 className="title-medium text-center mb-2">Tu Rol</h2>
             <p className="text-white/60 text-center">Toca para revelar</p>
           </div>
 
-          {/* Parte trasera */}
+          {/* Parte trasera - FONDO MÁS OSCURO Y OPACO */}
           <div 
-            className="absolute inset-0 glass-card flex flex-col items-center justify-center p-6"
+            className="absolute inset-0 flex flex-col items-center justify-center p-6 rounded-3xl border border-white/20"
             style={{ 
               backfaceVisibility: 'hidden',
-              transform: 'rotateY(180deg)'
+              transform: 'rotateY(180deg)',
+              backgroundColor: 'rgba(15, 15, 17, 0.98)', // Fondo casi negro y muy opaco
+              backdropFilter: 'blur(20px)',
+              boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.6)'
             }}
           >
             {showRole && (
@@ -117,44 +123,46 @@ const RoleRevealScreen = () => {
                 {/* Rol */}
                 <div className={`
                   text-6xl mb-4 p-4 rounded-full inline-block
-                  ${isImpostor ? 'bg-red-500/20' : isDetective ? 'bg-blue-500/20' : 'bg-green-500/20'}
+                  ${isImpostor ? 'bg-red-500/30' : isDetective ? 'bg-blue-500/30' : 'bg-green-500/30'}
                 `}>
                   {isImpostor ? '🎭' : isDetective ? '🕵️' : '👤'}
                 </div>
                 
                 <h2 className={`
-                  title-large mb-4
-                  ${isImpostor ? 'text-red-500' : isDetective ? 'text-blue-500' : 'text-green-500'}
+                  title-large mb-4 font-bold
+                  ${isImpostor ? 'text-red-400' : isDetective ? 'text-blue-400' : 'text-green-400'}
                 `}>
                   {isImpostor ? 'IMPOSTOR' : isDetective ? 'DETECTIVE' : 'CIVIL'}
                 </h2>
 
                 {/* Palabra o información */}
                 {isImpostor && !isAllImpostors ? (
-                  <div>
-                    <p className="text-white/80 mb-2">No conoces la palabra</p>
-                    <p className="text-sm text-white/60">Categoría: <span className="capitalize">{state.game.category}</span></p>
+                  <div className="bg-black/40 p-4 rounded-xl border border-white/10">
+                    <p className="text-white/90 mb-2 font-semibold">No conoces la palabra</p>
+                    <p className="text-sm text-white/70">
+                      Categoría: <span className="capitalize font-semibold">{state.game.category}</span>
+                    </p>
                   </div>
                 ) : (
                   <div>
-                    <p className="text-white/60 text-sm mb-2">
+                    <p className="text-white/70 text-sm mb-2 font-medium">
                       {isDetective ? 'Conoces la palabra y puedes ayudar' : 'La palabra es:'}
                     </p>
-                    <div className="bg-white/10 px-6 py-4 rounded-lg">
-                      <p className="text-2xl font-bold">{state.game.word}</p>
+                    <div className="bg-black/50 px-6 py-4 rounded-xl border-2 border-white/20">
+                      <p className="text-3xl font-bold text-white">{state.game.word}</p>
                     </div>
-                    <p className="text-sm text-white/60 mt-2">
-                      Categoría: <span className="capitalize">{state.game.category}</span>
+                    <p className="text-sm text-white/60 mt-3">
+                      Categoría: <span className="capitalize font-semibold">{state.game.category}</span>
                     </p>
                   </div>
                 )}
 
                 {isAllImpostors && (
-                  <div className="mt-4 p-3 bg-yellow-500/20 rounded-lg">
-                    <p className="text-yellow-500 text-sm font-semibold">
+                  <div className="mt-4 p-3 bg-yellow-500/30 rounded-xl border border-yellow-500/50">
+                    <p className="text-yellow-400 text-sm font-bold">
                       ⚠️ ¡MODO TROLL ACTIVADO!
                     </p>
-                    <p className="text-yellow-500/80 text-xs mt-1">
+                    <p className="text-yellow-400/90 text-xs mt-1">
                       Todos sois impostores
                     </p>
                   </div>

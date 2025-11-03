@@ -9,6 +9,7 @@ import CategorySelectionScreen from './screens/CategorySelectionScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import RoleRevealScreen from './screens/RoleRevealScreen';
 import GameActiveScreen from './screens/GameActiveScreen';
+import GameResultScreen from './screens/GameResultScreen'; // NUEVO
 import StatsScreen from './screens/StatsScreen';
 
 // Inicializar managers
@@ -50,6 +51,7 @@ function App() {
             <Route path="/settings" element={<SettingsScreen />} />
             <Route path="/reveal" element={<RoleRevealScreen />} />
             <Route path="/game" element={<GameActiveScreen />} />
+            <Route path="/result" element={<GameResultScreen />} /> {/* NUEVA RUTA */}
             <Route path="/stats" element={<StatsScreen />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

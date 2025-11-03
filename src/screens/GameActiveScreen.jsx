@@ -36,8 +36,8 @@ const GameActiveScreen = () => {
   const startingPlayer = state.players.find(p => p.id === state.game.startingPlayerId);
 
   const handleEndGame = () => {
-    dispatch({ type: 'RESET_GAME' });
-    navigate('/setup');
+    // En lugar de resetear, navegar a resultados
+    navigate('/result');
   };
 
   const handlePlayAgain = () => {
@@ -213,34 +213,34 @@ const GameActiveScreen = () => {
         </div>
       </Modal>
 
-      {/* Modal terminar juego */}
-      <Modal
-        isOpen={showEndModal}
-        onClose={() => setShowEndModal(false)}
-        title="Terminar Juego"
-      >
-        <div className="text-center">
-          <p className="text-white/80 mb-6">
-            ¿Estás seguro de que quieres terminar la partida actual?
-          </p>
-          <div className="flex gap-3">
-            <Button
-              variant="secondary"
-              fullWidth
-              onClick={() => setShowEndModal(false)}
-            >
-              Cancelar
-            </Button>
-            <Button
-              variant="danger"
-              fullWidth
-              onClick={handleEndGame}
-            >
-              Terminar
-            </Button>
+        {/* Modal terminar juego */}
+        <Modal
+          isOpen={showEndModal}
+          onClose={() => setShowEndModal(false)}
+          title="Terminar Ronda"
+        >
+          <div className="text-center">
+            <p className="text-white/80 mb-6">
+              ¿Terminar la ronda y revelar quiénes eran los impostores?
+            </p>
+            <div className="flex gap-3">
+              <Button
+                variant="secondary"
+                fullWidth
+                onClick={() => setShowEndModal(false)}
+              >
+                Cancelar
+              </Button>
+              <Button
+                variant="success"
+                fullWidth
+                onClick={handleEndGame}
+              >
+                Ver Resultados
+              </Button>
+            </div>
           </div>
-        </div>
-      </Modal>
+        </Modal>
     </div>
   );
 };

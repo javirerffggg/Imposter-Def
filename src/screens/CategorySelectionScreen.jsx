@@ -11,18 +11,70 @@ const CategorySelectionScreen = () => {
   const { state, dispatch } = useAppContext();
 
   const categories = {
-    animales: '🦁',
-    profesiones: '👨‍⚕️',
-    países: '🌍',
-    comida: '🍕',
-    deportes: '⚽',
-    películas: '🎬',
-    música: '🎵',
-    tecnología: '💻',
-    objetos: '🔑',
-    lugares: '🏛️',
-    ciencia: '🔬'
-  };
+  // Originales
+  animales: '🦁',
+  profesiones: '👨‍⚕️',
+  países: '🌍',
+  comida: '🍕',
+  deportes: '⚽',
+  películas: '🎬',
+  música: '🎵',
+  tecnología: '💻',
+  objetos: '🔑',
+  lugares: '🏛️',
+  ciencia: '🔬',
+  
+  // Nuevas (45 categorías)
+  instrumentos: '🎸',
+  colores: '🎨',
+  emociones: '😊',
+  vehículos: '🚗',
+  flores: '🌸',
+  frutas: '🍎',
+  verduras: '🥦',
+  postres: '🍰',
+  bebidas: '☕',
+  ropa: '👕',
+  muebles: '🛋️',
+  electrodomésticos: '🧊',
+  herramientas: '🔨',
+  superhéroes: '🦸',
+  villanos: '🦹',
+  personajes_disney: '🏰',
+  anime: '⛩️',
+  manga: '📖',
+  libros: '📚',
+  escritores: '✍️',
+  pintores: '🖼️',
+  escultores: '🗿',
+  monumentos: '🗼',
+  ciudades: '🏙️',
+  ríos: '🌊',
+  montañas: '⛰️',
+  planetas: '🪐',
+  constelaciones: '✨',
+  elementos_químicos: '⚗️',
+  partes_del_cuerpo: '🫀',
+  enfermedades: '🏥',
+  medicamentos: '💊',
+  idiomas: '🗣️',
+  monedas: '💰',
+  oficios_antiguos: '🏺',
+  mitología: '⚡',
+  religiones: '🕉️',
+  festividades: '🎉',
+  juegos_de_mesa: '🎲',
+  cartas: '🃏',
+  aplicaciones: '📱',
+  redes_sociales: '💬',
+  programación: '👨‍💻',
+  empresas_tech: '🖥️',
+  youtubers: '📹',
+  streamers: '🎥',
+  memes: '😂'
+  famosos_españoles: '🇪🇸'
+};
+
 
   useEffect(() => {
     // Si no hay jugadores, volver a setup

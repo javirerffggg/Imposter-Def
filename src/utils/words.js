@@ -452,7 +452,7 @@ export const wordBank = {
       'mocasín', 'oxford', 'derby', 'monk strap', 'loafer', 'espadrille',
       'wedge', 'kitten heel', 'stiletto', 'pump', 'slingback'
     ]
-  };
+  },
 
   muebles: {
     easy: [
@@ -665,7 +665,7 @@ export const wordBank = {
       'Augusto Roa Bastos', 'Alejo Carpentier', 'José Lezama Lima',
       'Guillermo Cabrera Infante', 'Severo Sarduy', 'Diamela Eltit'
     ]
-  };
+  },
 
   pintores: {
     easy: [
@@ -907,7 +907,7 @@ export const wordBank = {
       'tocilizumab', 'secukinumab', 'ustekinumab', 'vedolizumab',
       'certolizumab', 'golimumab', 'abatacept', 'anakinra', 'canakinumab'
     ]
-  };
+  },
 
   idiomas: {
     easy: [
@@ -1199,7 +1199,7 @@ export const wordBank = {
       'ngmi', 'wagmi', 'fud', 'hopium', 'copium', 'seethe', 'dilate',
       'rent free', 'touch grass', 'based', 'cringe', 'redpilled'
     ]
-  };
+  },
 
   famosos_españoles: {
     easy: [

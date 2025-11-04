@@ -137,13 +137,14 @@ const RoleRevealScreen = () => {
 
                 {/* Palabra o información */}
                 {isImpostor && !isAllImpostors ? (
-                  <div className="bg-black/40 p-4 rounded-xl border border-white/10">
-                    <p className="text-white/90 mb-2 font-semibold">No conoces la palabra</p>
-                    <p className="text-sm text-white/70">
-                      Categoría: <span className="capitalize font-semibold">{state.game.category}</span>
-                    </p>
-                  </div>
-                ) : (
+              <div className="bg-black/40 p-4 rounded-xl border border-white/10">
+                <p className="text-white/90 mb-2 font-semibold">No conoces la palabra</p>
+                <p className="text-sm text-white/70">
+                  Debes descubrir la palabra sin revelar tu identidad
+                </p>
+              </div>
+              ) : (
+              // ... resto del código
                   <div>
                     <p className="text-white/70 text-sm mb-2 font-medium">
                       {isDetective ? 'Conoces la palabra y puedes ayudar' : 'La palabra es:'}

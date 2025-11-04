@@ -11,73 +11,71 @@ const CategorySelectionScreen = () => {
   const { state, dispatch } = useAppContext();
 
   const categories = {
-  // Originales
-  animales: '🦁',
-  profesiones: '👨‍⚕️',
-  países: '🌍',
-  comida: '🍕',
-  deportes: '⚽',
-  películas: '🎬',
-  música: '🎵',
-  tecnología: '💻',
-  objetos: '🔑',
-  lugares: '🏛️',
-  ciencia: '🔬',
-  
-  // Nuevas (45 categorías)
-  instrumentos: '🎸',
-  colores: '🎨',
-  emociones: '😊',
-  vehículos: '🚗',
-  flores: '🌸',
-  frutas: '🍎',
-  verduras: '🥦',
-  postres: '🍰',
-  bebidas: '☕',
-  ropa: '👕',
-  muebles: '🛋️',
-  electrodomésticos: '🧊',
-  herramientas: '🔨',
-  superhéroes: '🦸',
-  villanos: '🦹',
-  personajes_disney: '🏰',
-  anime: '⛩️',
-  manga: '📖',
-  libros: '📚',
-  escritores: '✍️',
-  pintores: '🖼️',
-  escultores: '🗿',
-  monumentos: '🗼',
-  ciudades: '🏙️',
-  ríos: '🌊',
-  montañas: '⛰️',
-  planetas: '🪐',
-  constelaciones: '✨',
-  elementos_químicos: '⚗️',
-  partes_del_cuerpo: '🫀',
-  enfermedades: '🏥',
-  medicamentos: '💊',
-  idiomas: '🗣️',
-  monedas: '💰',
-  oficios_antiguos: '🏺',
-  mitología: '⚡',
-  religiones: '🕉️',
-  festividades: '🎉',
-  juegos_de_mesa: '🎲',
-  cartas: '🃏',
-  aplicaciones: '📱',
-  redes_sociales: '💬',
-  programación: '👨‍💻',
-  empresas_tech: '🖥️',
-  youtubers: '📹',
-  streamers: '🎥',
-  memes: '😂'
-  famosos_españoles: '🇪🇸'
-};
-
+    // Originales
+    animales: '🦁',
+    profesiones: '👨‍⚕️',
+    países: '🌍',
+    comida: '🍕',
+    deportes: '⚽',
+    películas: '🎬',
+    música: '🎵',
+    tecnología: '💻',
+    objetos: '🔑',
+    lugares: '🏛️',
+    ciencia: '🔬',
+    
+    // Nuevas (46 categorías)
+    instrumentos: '🎸',
+    colores: '🎨',
+    emociones: '😊',
+    vehículos: '🚗',
+    flores: '🌸',
+    frutas: '🍎',
+    verduras: '🥦',
+    postres: '🍰',
+    bebidas: '☕',
+    ropa: '👕',
+    muebles: '🛋️',
+    electrodomésticos: '🧊',
+    herramientas: '🔨',
+    superhéroes: '🦸',
+    villanos: '🦹',
+    personajes_disney: '🏰',
+    anime: '⛩️',
+    manga: '📖',
+    libros: '📚',
+    escritores: '✍️',
+    pintores: '🖼️',
+    escultores: '🗿',
+    monumentos: '🗼',
+    ciudades: '🏙️',
+    ríos: '🌊',
+    montañas: '⛰️',
+    planetas: '🪐',
+    constelaciones: '✨',
+    elementos_químicos: '⚗️',
+    partes_del_cuerpo: '🫀',
+    enfermedades: '🏥',
+    medicamentos: '💊',
+    idiomas: '🗣️',
+    monedas: '💰',
+    oficios_antiguos: '🏺',
+    mitología: '⚡',
+    religiones: '🕉️',
+    festividades: '🎉',
+    juegos_de_mesa: '🎲',
+    cartas: '🃏',
+    aplicaciones: '📱',
+    redes_sociales: '💬',
+    programación: '👨‍💻',
+    empresas_tech: '🖥️',
+    youtubers: '📹',
+    streamers: '🎥',
+    memes: '😂',
+    famosos_españoles: '🇪🇸'
+  };
 
   useEffect(() => {
-    // Si no hay jugadores, volver a setup
     if (state.players.length < 3) {
       navigate('/setup');
     }
@@ -108,14 +106,12 @@ const CategorySelectionScreen = () => {
       return;
     }
 
-    // Asignar roles y comenzar
     dispatch({ type: 'ASSIGN_ROLES' });
     navigate('/reveal');
   };
 
   return (
     <div className="h-full w-full flex flex-col bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
-      {/* Header */}
       <div className="p-6 border-b border-white/10">
         <div className="flex items-center justify-between mb-4">
           <Button
@@ -139,7 +135,6 @@ const CategorySelectionScreen = () => {
         </p>
       </div>
 
-      {/* Botones de selección rápida */}
       <div className="p-6 flex gap-3">
         <Button
           variant="ghost"
@@ -159,7 +154,6 @@ const CategorySelectionScreen = () => {
         </Button>
       </div>
 
-      {/* Grid de categorías */}
       <div className="flex-1 overflow-y-auto px-6 pb-6">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
           {Object.entries(categories).map(([category, icon]) => (
@@ -174,7 +168,6 @@ const CategorySelectionScreen = () => {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="p-6 border-t border-white/10">
         <Button
           variant="success"
